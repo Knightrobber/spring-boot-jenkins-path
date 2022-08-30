@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Run Docker Image'){
             steps{
-                bat 'cd spring-boot-jenkins-path & docker run -d -p 8082:8083 --name jenkins-aws-proj-jenkinspath jenkins-aws-projpatj'
+                bat 'cd spring-boot-jenkins-path & docker run -d -p 8082:8083 --name jenkins-aws-proj-jenkinspath jenkins-aws-proj-jenkinspath'
             }
         }
 
