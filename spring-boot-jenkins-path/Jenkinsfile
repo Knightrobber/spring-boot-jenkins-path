@@ -12,17 +12,18 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'dir'
+                bat 'cd spring-boot-jenkins-path & mvn test'
             }
         }
         stage('Build Docker Image'){
             steps{
-                bat 'docker build -t jenkins-aws-proj-jenkinspath .'
+                bat 'cd spring-boot-jenkins-path & docker build -t jenkins-aws-proj-jenkinspath .'
             }
         }
         stage('Run Docker Image'){
             steps{
-                bat 'docker run -d -p 8082:8083 --name jenkins-aws-proj-jenkinspath jenkins-aws-projpatj'
+                bat 'cd spring-boot-jenkins-path & docker run -d -p 8082:8083 --name jenkins-aws-proj-jenkinspath jenkins-aws-projpatj'
             }
         }
 
